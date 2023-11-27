@@ -1,0 +1,122 @@
+.img_logo{
+    margin-right: 30px;
+}
+.album{
+    margin-top: 50px;
+
+
+.zz{
+    weight: 100%;
+}
+
+}
+.col{
+    height: 550px;
+}
+
+.main1{
+    margin-top:50px;
+}
+
+.flash{
+    background-color: red;
+}
+
+body{
+
+}
+.content{
+    min-height: 80vh;
+    background-color: white;
+}
+
+#footer{
+    background-color: white;
+}
+
+form{
+    margin-top: 100px;
+    width: 50%;
+    float: left;
+}
+
+.security{
+    width: 600px;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.auto1{
+    width: 50%;
+    margin-left: 100px;
+
+}
+
+.test1{
+    width: 280px;
+}
+.nik1{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 'n1 n2';
+    gap: 30px;
+}
+
+.a1{
+    grid-template-area: 'n1'
+}
+
+.b1{
+    grid-template-area: 'n2'
+}
+
+.primer{
+    background-color: #FFE4B5;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.primer1{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 'n1 n2';
+    gap: 30px;
+}
+
+.n1{
+    grid-template-area: 'n1'
+}
+
+.n2{
+    grid-template-area: 'n2'
+}
+
+.primer2{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: 'n1 n2';
+    gap: 5;
+}
+
+.nn1{
+    grid-template-area: 'n1'
+}
+
+.nn2{
+    grid-template-area: 'n2'
+}
+
+.primer3{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 'n1 n2';
+    gap: 15px;
+}
+
+.nnn1{
+    grid-template-area: 'n1'
+}
+
+.nnn2{
+    grid-template-area: 'n2'
+}
