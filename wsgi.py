@@ -1,7 +1,7 @@
 import flask
 from flask import Flask, render_template, request, flash, url_for, redirect
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, TextAreaField
 from wtforms.validators import DataRequired, Email
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
@@ -29,6 +29,7 @@ def load_user(user_id):
 class Registr(FlaskForm):
     login = StringField("Name: ", validators=[DataRequired()])
     password = StringField("Password: ", validators=[Email()])
+    message = TextAreaField("Введите свое сообщение для NikNik47", validators=[DataRequired()]) 
 
 @app.route('/main')
 @login_required
@@ -51,6 +52,23 @@ def index2():
             flash('Неправильный логин или пароль', category='error')
     s = Registr()
     return render_template('registration.html', form=s)
+
+
+@app.route('/contact', methods=['GET', 'POST']) #111111111
+@login_required
+def index30():
+    if request.method == 'POST':
+        message1 = request.form.get('message')
+        try:
+            with open('messages.txt', 'a+', encoding='utf-8') as file:
+                file.write(message1 + '\n\n')
+            flash('отправленно', category='message')
+            return render_template('/lesson.html'), {"Refresh": "0; url=/contact"}
+        except:
+            flash('произошла ошибка', category='error')
+    s1 = Registr()
+    return render_template('contact.html', form=s1)
+
 
 
 @app.route('/lesson')
@@ -112,6 +130,11 @@ def index28():
 @login_required
 def index29():
     return render_template('python9.html')
+    
+@app.route('/python10')
+@login_required
+def index210():
+    return render_template('python10.html')
 
 @app.errorhandler(404)
 def not_found_error(error):

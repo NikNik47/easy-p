@@ -1,0 +1,46 @@
+{% extends 'index1.html' %}
+
+{% block content %}
+<div class="container">
+    <p></p>
+    <p></p>
+    <br>
+    <br>
+    <br>
+    <br><center><h1 class="text-center">Форма обратной связи!</h1></center>
+    <div class="contact1">
+        <form action="/contact" method="POST">
+                <div class="contact2" style="width: 100%;">
+                    <center><img src="../static/img/dots.gif"></center>
+                    <center><p>{{ form.message.label }}</p></center>
+                    {{ form.message(size=500, style="width: 100%", class="form-control") }}
+                    <br>
+                    <button class="btn btn-primary test47" type="submit"><p>Отправить сообщение</p></button>
+                    <br>
+                    <br>
+                </div>
+        </form>
+        {% for msg in get_flashed_messages() %}
+            <div class="flash">{{msg}}</div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.contact1 {
+  display: grid;
+  place-items: center;
+}
+
+textarea {
+  height: 150px;
+}
+
+.test47{
+    width:100%;
+    display:block;
+}
+
+</style>
+
+{% endblock content%}
