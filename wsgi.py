@@ -135,6 +135,11 @@ def index29():
 @login_required
 def index210():
     return render_template('python10.html')
+    
+@app.route('/python11')
+@login_required
+def index211():
+    return render_template('python11.html')
 
 @app.errorhandler(404)
 def not_found_error(error):
